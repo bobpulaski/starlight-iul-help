@@ -1,36 +1,41 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
+import { defineConfig } from "astro/config";
+import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [
-		starlight({
-			title: 'Quatros',
-			locales: {
-				root: {
-				  label: 'Русский',
-				  lang: 'ru',
-				},
-			  },
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
-			sidebar: [
-				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
-				{
-					label: 'Suchara',
-					autogenerate: { directory: 'suka' },
-				},
-			],
-		}),
-	],
+  base: "/docs/",
+  integrations: [
+    starlight({
+      title: "Документация Quatros",
+      locales: {
+        root: {
+          label: "Русский",
+          lang: "ru",
+        },
+      },
+      // social: [
+      //   {
+      //     icon: "github",
+      //     label: "GitHub",
+      //     href: "https://github.com/withastro/starlight",
+      //   },
+      // ],
+      sidebar: [
+        { slug: "intro" },
+        { slug: "builder" },
+        { slug: "sigs" },
+        { slug: "history" },
+
+        // {
+        //   label: "Подписи",
+        //   autogenerate: { directory: "reference" },
+        // },
+        // {
+        //   label: "История ",
+        //   autogenerate: { directory: "suka" },
+        // },
+      ],
+    }),
+  ],
 });
