@@ -24,7 +24,7 @@ export default defineConfig({
       sidebar: [
         { slug: "intro" },
         { slug: "builder" },
-        { slug: "sigs" },
+        { slug: "signs" },
         { slug: "history" },
 
         // {
